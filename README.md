@@ -1,182 +1,170 @@
-# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Project 1: Standardized Testing, Statistical Summaries and Inference
-
-### Overview
-
-Our first module in DSI covers:
-- basic statistics (distributions, confidence intervals, hypothesis testing)
-- many Python programming conceptsc
-- programmatically interacting with files and directories
-- visualizations
-- EDA
-- working with Jupyter notebooks for development and reporting
-
-You might wonder if you're ready to start doing data science. While you still have **tons** to learn, there are many aspects of the data science process that you're ready to tackle. Project 1 aims to allow you to practice and demonstrate these skills.
-
-For our first project, we're going to take a look at aggregate SAT and ACT scores and participation rates from each state in the United States. We'll seek to identify trends in the data and combine our data analysis with outside research to identify likely factors influencing participation rates and scores in various states.
-
-Generally speaking, you will be asked to come up with a data science problem. Here's a specific prompt that should help you craft this statement:
->
-The new format for the SAT was released in March 2016. As an employee of the College Board - the organization that administers the SAT - you are a part of a team that tracks statewide participation and recommends where money is best spent to improve SAT participation rates. Your presentation and report should be geared toward **non-technical** executives with the College Board and you will use the provided data and outside research to make recommendations about how the College Board might work to increase the participation rate in a **state of your choice**.
+# SAT Participation in Oregon: A look into stagnant college preparedness and potential fixes 
 
 ---
 
-### Datasets
+## README Contents
 
-#### Provided Data
+---
+---
 
-For this project, you'll have four provided datasets:
+- [Introduction](#introduction) 
+- [Methodology](#methodology)
+- [Datasets and Data Dictionary Used](#Datasets_Used)
+- [Analysis and Findings](#analysis) 
+- [Conclusions, Recommendations, & Further Research](#conclusion)
+- [Sources](#sources)
+##### Note: Sources for statements are below each section with a list of ALL sources used at the bottom of this document.
 
-- [2017 SAT Scores](./data/sat_2017.csv)
-- [2017 ACT Scores](./data/act_2017.csv)
-- [2018 SAT Scores](./data/sat_2018.csv)
-- [2018 ACT Scores](./data/act_2018.csv)
 
-These data give average SAT and ACT scores by state, as well as participation rates, for the graduating class of 2017.
 
-You can see the source for the SAT data [here](https://blog.collegevine.com/here-are-the-average-sat-scores-by-state/), and the source for the ACT data [here](https://blog.prepscholar.com/act-scores-by-state-averages-highs-and-lows). **Make sure you cross-reference your data with your data sources to eliminate any data collection or data entry issues.**
+# Introduction <a id='introduction'></a>
+---
 
-#### Additional Data
-(_This data is for your reference only. It is not needed to complete the project. You are required to include all of the above csv data._)
+### Problem Statement
+The College Board's primary revenue stream is from the participation of students taking the SAT (Scholastic Aptitude Test) and the associated subtests (AP Tests) which are offered for a variety of subjects such as Math, Science, English, History, foreign languages, and others. College Board's audit is summed up in tables on Total Registration's site. It shows that since 2007 the College Board has made $800 million while administering over 5 million exams in 2018, double of what it administered in 2007. This comes with over double the profit of 2007 as well. Despite these facts, College Board stakeholders and executives should still be wary of the possibility of decline in participation which would directly lead to a loss in profit. According to the Washington Post nearly 40 percent of accredited colleges have dropped the SAT requirement from their admissions process. There is also the option to take other college readiness exams such as the ACT. Another Washington Post article states that only of recently (October 2018) the SAT surpassed the ACT in administered tests since 2012. To top it all off, future students may not even consider going to college with underemployment at roughly 40 percent according to the Wall Street Journal. This is the amount of college graduates who have jobs that do not require a college degree. Taking on crushing debt combined with no promise of a higher paying job are thoughts that linger in students and parents with students today. All these factors can contribute to a decrease in future test takers and thus future revenue. 
 
-2018 state-by-state average results and participation for the SAT are available in PDF reports [here](https://reports.collegeboard.org/sat-suite-program-results/state-results). 2018 ACT state-by-state mean composite scores and participation rates are [here](http://www.act.org/content/dam/act/unsecured/documents/cccr2018/Average-Scores-by-State.pdf) .
 
-**This data has been compiled into CSV files which are also included in the *data* directory of this repo**
+- ***Washington Post Article (Colleges Dropping SAT)***: https://www.washingtonpost.com/education/2019/10/18/record-number-colleges-drop-satact-admissions-requirement-amid-growing-disenchantment-with-standardized-tests/
+
+
+- ***Prorepublica (College Board Audit)***: https://projects.propublica.org/nonprofits/organizations/131623965
+
+
+- ***Total Registration (College Board Audit Summary)***: https://www.totalregistration.net/AP-Exam-Registration-Service/Follow-The-Money-History-of-College-Board-Finances.php
+
+
+- ***Washington Post (SAT vs ACT Popularity)***: https://www.washingtonpost.com/education/2018/10/23/sat-reclaims-title-most-widely-used-college-admission-test/
+
+
+- ***Wall Street Journal (Underemployment)***: https://www.wsj.com/articles/study-offers-new-hope-for-english-majors-1540546200
+
+
+
+# Methodology <a id='methodology'></a>
+---
+
+The first step in looking for potential states for investment was to look at participation rates by state. We could ignore states with high rates of participation for the SAT as there is obviously not much room to increase the participation of students. We could also ignore states that had 100% ACT participation but required students by law to take the ACT such as Hawaii, Alabama, Kentucky, Louisianna, and more as changing education laws might prove to be a difficult task. Instead we decided to focus on states that overall had a low participation for both SAT and ACT, meaning that these states had no mandates for testing but had students that were apathetic towards taking college ready tests. These states have the most potential for growth and would therefore offer the best return on an investment. 
+
+The goal was to find a state with both low ACT and SAT participation as the best potential hub for growth and ROI.  We simply applied a filter for finding participation of less than 50% for both 2017 and 2017. We were able to find that Oregon is our best potential candidate for investment.
+
+
+The next step is to research and examine what reasons are there that this state might have low standardized test participation? Possible theories may be that it is a rural area and most of the economy does not require a college degree, or that the median income is lower in that state preventing students from going to college. Perhaps there aren't many colleges in the state or surrounding the state making the decision tougher for students? 
+
+- ***List of states that require SAT/ACT***: https://www.princetonreview.com/college-advice/act-sat-state-requirements
+
+
+
+
+# Datasets Used <a id='Datasets_Used'></a>
+---
+
+|Dataset|Description|Link|
+|---|---|---|
+|ACT 2017|2017 Average ACT Scores by State|https://blog.prepscholar.com/act-scores-by-state-averages-highs-and-lows||
+|ACT 2018|2018 Average ACT Scores by State|http://www.act.org/content/dam/act/unsecured/documents/cccr2018/Average-Scores-by-State.pdf||
+|SAT 2017|2017 Average SAT Scores by State |https://blog.collegevine.com/here-are-the-average-sat-scores-by-state/||
+|SAT 2018|2018 Average SAT Scores by State|https://reports.collegeboard.org/sat-suite-program-results/state-results||
+
+
+
+
+
+
 
 ---
 
-### Deliverables
+# Analysis and Findings <a id='analysis'></a>
+---
 
-All of your projects will comprise of a written technical report and a presentation. As we continue in the course, your technical report will grow in complexity, but for this initial project it will comprise:
-- A Jupyter notebook that describes your data with visualizations & statistical analysis.
-- A README markdown file the provides an introduction to and overview of your project.
-- Your presentation slideshow rendered as a .pdf file.
-**NOTE**: Your entire Github repository will be evaluated as your technical report. Make sure that your files and directories are named appropriately, that all necessary files are included, and that no unnecessary or incomplete files are included.
+### Analysis of National Participation and State Selection Process
 
-For your first presentation, you'll be presenting to a **non-technical** audience. You should prepare a slideshow with appropriately scaled visuals to complement a compelling narrative. **Presentation duration will differ by market, so check with your local instructor.**
+In order to select the best candidate I filtered through our datasets to find states with less than 50% participation for both the SAT/ACT in 2017 and 2018. Oregon was the only state that fit this criteria. Visually from the scatter plot we can see that most states have an uneven split, around 60-40 between SAT/ACT, however Oregon represents a major outlier having values of around 40% for each test.
+
+|Oregon|Stat Description|Value|
+|---|---|---|
+|ACT 2017|ACT Participation % for Oregon in 2017|40%|
+|ACT 2018|ACT Participation % for Oregon in 2018 |42%|
+|SAT 2017|SAT Participation % for Oregon in 2017|43%|
+|SAT 2018|SAT Participation % for Oregon in 2018|48%|
+
+![participationplot.png](attachment:participationplot.png)
 
 ---
 
-### Technical Report Starter Code
+### Oregon Findings
 
-Future projects will require you to decide on the entire structure of your technical report. Here, we provide you with [starter code](./code/starter-code.ipynb) in a Jupyter notebook that will help to guide your data exploration and analysis. **If you choose to edit the core structure of this notebook, make sure you don't exclude any of the requested operations**.
+For this project we were not presented with datasets on individual states or any other materials other than statistics on the SAT/ACT. Outside resources were used to investigate reasons as to why Oregon may have low standardized test participation. Upon researching the Oregon education system I found that most recent articles had to do with Oregon schools underpforming and their test scores being some of their lowest in recent years. A few significant findings and the sources are listed below.
 
----
+- Oregon has the 48th lowest high school graduation rate in the U.S.
+- Oregon teachers get paid $2,200 higher than the national average but have 23% more students per teacher than the national average.
+- Out of state enrollment has gone up however in state enrollment has been on a decline since 2008.
+- Oregon ranks 2nd to last in terms of gap in achievement between lower income and higher income 4th and 8th graders.
+- Only 13% of schools had funding at or above the average for individual student spending (42% national average).
 
-### Style Guide and Suggested Resources
 
-[Tim Dwyer](https://www.linkedin.com/in/jtimdwyer/) (former DSI student and TA) put together [this style guide](https://git.generalassemb.ly/DSI-US-10/style_guide). Some recommendations are geared toward future projects (which will include modeling and span multiple notebooks), but generally these are great recommendations.
+***Figure 1, 2016-2017 Graduation Rates in the U.S.*** (nces.ed.gov)
 
-Here's a link on [how to give a good lightning talk](https://www.semrush.com/blog/16-ways-to-prepare-for-a-lightning-talk/), which provides some good recommendations for short presentations.
-
-[Here's a great summary](https://towardsdatascience.com/storytelling-with-data-a-data-visualization-guide-for-business-professionals-97d50512b407) of the main points of the book _Storytelling with Data_, which I can't recommend enough. [Here's a blog post](http://www.storytellingwithdata.com/blog/2017/8/9/my-guiding-principles) by the author about his guiding principles for visualizations.
-
----
-
-### Submission
-
-**Materials must be submitted by the beginning of class on December 20.**
-
-Your technical report will be hosted on Github Enterprise. Make sure it includes:
-
-- A README.md (that isn't this file)
-- Jupyter notebook(s) with your analysis (renamed to describe your project)
-- Data files
-- Presentation slides
-- Any other necessary files (images, etc.)
-
-**Check with your local instructor for how they would like you to submit your repo for review.**
+![graduationrates.png](attachment:graduationrates.png)
 
 ---
 
-### Presentation Structure
+***Figure 2, Total enrollment in Oregon Community Colleges 2006-2019*** - (Oregon.gov)
+![Enrollment-CC-historical.png](attachment:Enrollment-CC-historical.png)
 
-- **Must be within time limit established by local instructor.**
-- Use Google Slides or some other visual aid (Keynote, Powerpoint, etc).
-- Consider the audience. Assume you are presenting to non-technical executives with the College Board (the organization that administers the SATs).
-- Start with the **data science problem**.
-- Use visuals that are appropriately scaled and interpretable.
-- Talk about your procedure/methodology (high level, **CODE IS ALWAYS INAPPROPRIATE FOR A NON-TECHNICAL AUDIENCE**).
-- Talk about your primary findings.
-- Make sure you provide **clear recommendations** that follow logically from your analyses and narrative and answer your data science problem.
 
-Be sure to rehearse and time your presentation before class.
+
+
+
+
 
 ---
 
-### Rubric
-Your local instructor will evaluate your project (for the most part) using the following criteria.  You should make sure that you consider and/or follow most if not all of the considerations/recommendations outlined below **while** working through your project.
+- ***Oregonlive***: https://www.oregonlive.com/education/2016/01/oregon_ranks_low_in_education.html
+- ***opb.org***: https://www.opb.org/news/article/enrollment-decline-oregon-college-university-2018/
+- ***bridgeliner.com***: https://bridgeliner.com/newsletter/2018-09-05-why-is-oregons-graduation-rate-so-so-bad/
+- ***oregon.gov***: https://www.oregon.gov/ode/students-and-family/GraduationImprovement/Pages/GradSystems.
+- https://www.oregon.gov/highered/research/Pages/student-data-cc.aspx
+- ***nces.ed.gov***: https://nces.ed.gov/programs/coe/indicator_coi.asp
 
-**Scores will be out of 21 points based on the 7 items in the rubric.** <br>
-*3 points per section*<br>
+# Conclusions and Recommendations <a id='conclusion'></a>
 
-| Score | Interpretation |
-| --- | --- |
-| **0** | *Project fails to meet the minimum requirements for this item.* |
-| **1** | *Project meets the minimum requirements for this item, but falls significantly short of portfolio-ready expectations.* |
-| **2** | *Project exceeds the minimum requirements for this item, but falls short of portfolio-ready expectations.* |
-| **3** | *Project meets or exceeds portfolio-ready expectations; demonstrates a thorough understanding of every outlined consideration.* |
-    
-**Project Organization**
-- Are modules imported correctly (using appropriate aliases)?
-- Are data imported/saved using relative paths?
-- Does the README provide a good executive summary of the project?
-- Is markdown formatting used appropriately to structure notebooks?
-- Are there an appropriate amount of comments to support the code?
-- Are files & directories organized correctly?
-- Are there unnecessary files included?
-- Do files and directories have well-structured, appropriate, consistent names?
+---
 
-**Clarity of Message**
-- Is the problem statement clearly presented?
-- Does a strong narrative run through the project?
-- Does the student provide appropriate context to connect individual steps back to the overall project?
-- Is it clear how the final recommendations were reached?
-- Are the conclusions/recommendations clearly stated?
+The data shows that Oregon's education system is severely lacking in resources to help lower income students graduate and go onto college. This has led to a significant decline in college enrollment over time. Further research could show how low graduation rates and low college educated populations can hinder economic growth, raise unemployment, and lead to increased crime. Although this is not an easy problem to fix by any means, College Board can aim to remedy the situation and potentially boost it's own profit in this situation.
 
-**Python Syntax and Control Flow**
-- Is care taken to write human readable code?
-- Is the code syntactically correct (no runtime errors)?
-- Does the code generate desired results (logically correct)?
-- Does the code follows general best practices and style guidelines?
-- Are Pandas functions used appropriately?
-- Does the student demonstrate mastery masking in Pandas?
-- Does the student demonstrate mastery sorting in Pandas?
+The best case scenario is to campaign the state government to make taking the SAT mandatory. Although the state needs funding for education, College Board footing the bill in hopes that it makes a return years down the line is a risk especially for a state that has a history of underperforming. This recommendation aims to leverage a limited investment which will hopefully result in government spending continuing the investment while providing profit to College Board.
 
-**Data Cleaning and EDA**
-- Does the student fix data entry issues?
-- Are data appropriately labeled?
-- Are data appropriately typed?
-- Are datasets combined correctly?
-- Are appropriate summary statistics provided?
-- Are steps taken during data cleaning and EDA framed appropriately?
+### Recommendation: Small SAT Prep Campaign 
 
-**Visualizations**
-- Are the requested visualizations provided?
-- Do plots accurately demonstrate valid relationships?
-- Are plots labeled properly?
-- Plots interpreted appropriately?
-- Are plots formatted and scaled appropriately for inclusion in a notebook-based technical report?
+A campaign could mention that Oregon is on the decline education wise and unless you prepare students to take a college readiness exam the number of college graduates in Oregon will continue to decline, which of course leads to the afforementioned problems of unemployment, crime, and a hindered economy. The goal is to get participation up without having to spend too much money. To convince legislation to change, College Board could run a trial program for a few years in select underperforming schools. Provide tutorting, after school help, free SAT Test Prep, free SAT tests, etc. If those students have a higher enrollment and graduation rate then that can be used to convince legislation to pour more money into SAT test prep and administration of the test, turning a profit to College Board.
 
-**Research and Conceptual Understanding**
-- Were useful insights gathered from outside sources?
-- Are sources clearly identified?
-- Does the student provide appropriate interpretation with regards to descriptive and inferential statistics? 
+# Sources<a id='sources'></a>
+--- 
 
-**Presentation**
-- Is the problem statement clearly presented?
-- Does a strong narrative run through the presentation building toward a final conclusion?
-- Are the conclusions/recommendations clearly stated?
-- Is the level of technicality appropriate for the intended audience?
-- Is the student substantially over or under time?
-- Does the student appropriately pace their presentation?
-- Does the student deliver their message with clarity and volume?
-- Are appropriate visualizations generated for the intended audience?
-- Are visualizations necessary and useful for supporting conclusions/explaining findings?
+- ***Washington Post Article (Colleges Dropping SAT)***: https://www.washingtonpost.com/education/2019/10/18/record-number-colleges-drop-satact-admissions-requirement-amid-growing-disenchantment-with-standardized-tests/
 
-In order to pass the project, students must earn a minimum score of 1 for each category. 
-- Earning below a 1 in one or more of the above categories would result in a failing project.
-- While a minimum of 1 in each category is the required threshold for graduation, students should aim to earn at least an average of 1.5 across each category. An average score below 1.5, while it may be passing, means students may want to solicit specific feedback in order to significantly improve the project before showcasing it as part of a portfolio or the job search.
+- ***Prorepublica (College Board Audit)***: https://projects.propublica.org/nonprofits/organizations/131623965
 
-### REMEMBER:
+- ***Total Registration (College Board Audit Summary)***: https://www.totalregistration.net/AP-Exam-Registration-Service/Follow-The-Money-History-of-College-Board-Finances.php
 
-This is a learning environment and you are encouraged to try new things, even if they don't work out as well as you planned! While this rubric outlines what we look for in a _good_ project, it is up to you to go above and beyond to create a _great_ project. **Learn from your failures and you'll be prepared to succeed in the workforce**.
+
+- ***Washington Post (SAT vs ACT Popularity)***: https://www.washingtonpost.com/education/2018/10/23/sat-reclaims-title-most-widely-used-college-admission-test/
+
+- ***Wall Street Journal (Underemployment)***: https://www.wsj.com/articles/study-offers-new-hope-for-english-majors-1540546200
+
+- ***List of states that require SAT/ACT***: https://www.princetonreview.com/college-advice/act-sat-state-requirements
+- ***Washington Post Article (Colleges Dropping SAT)***: https://www.washingtonpost.com/education/2019/10/18/record-number-colleges-drop-satact-admissions-requirement-amid-growing-disenchantment-with-standardized-tests/
+
+- ***Prorepublica (College Board Audit)***: https://projects.propublica.org/nonprofits/organizations/131623965
+
+- ***Total Registration (College Board Audit Summary)***: https://www.totalregistration.net/AP-Exam-Registration-Service/Follow-The-Money-History-of-College-Board-Finances.php
+
+- ***Washington Post (SAT vs ACT Popularity)***: https://www.washingtonpost.com/education/2018/10/23/sat-reclaims-title-most-widely-used-college-admission-test/
+
+- ***Wall Street Journal (Underemployment)***: https://www.wsj.com/articles/study-offers-new-hope-for-english-majors-1540546200
+
+- ***List of states that require SAT/ACT***: https://www.princetonreview.com/college-advice/act-sat-state-requirements
+
+
+
+---
