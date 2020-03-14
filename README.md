@@ -87,7 +87,7 @@ In order to select the best candidate I filtered through our datasets to find st
 |SAT 2017|SAT Participation % for Oregon in 2017|43%|
 |SAT 2018|SAT Participation % for Oregon in 2018|48%|
 
-![participationplot.png](attachment:participationplot.png)
+<img src="./Images/participationplot.png"  width="600" height="400">
 
 ---
 
@@ -104,12 +104,12 @@ For this project we were not presented with datasets on individual states or any
 
 ***Figure 1, 2016-2017 Graduation Rates in the U.S.*** (nces.ed.gov)
 
-![graduationrates.png](attachment:graduationrates.png)
+<img src="./Images/graduationrates.png"  width="600" height="400">
 
 ---
 
 ***Figure 2, Total enrollment in Oregon Community Colleges 2006-2019*** - (Oregon.gov)
-![Enrollment-CC-historical.png](attachment:Enrollment-CC-historical.png)
+<img src="./Images/Enrollment-CC-historical.png"  width="600" height="400">
 
 
 
